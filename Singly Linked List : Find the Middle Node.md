@@ -36,10 +36,73 @@ To write a Python program that:
 ---
 
 ## 💻 Program
-Add code here
+```python
+# Node class for singly linked list
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+# LinkedList class
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    # Append node at the end
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    # Recursive function to find middle
+    def get_middle_recursive(self, slow, fast):
+        # Base case: if fast reaches end or fast.next is None
+        if fast is None or fast.next is None:
+            return slow
+        # Recursive call: slow moves 1 step, fast moves 2 steps
+        return self.get_middle_recursive(slow.next, fast.next.next)
+
+    # Function to find middle node
+    def find_middle(self):
+        if not self.head:
+            return None
+        middle_node = self.get_middle_recursive(self.head, self.head)
+        return middle_node.data
+
+
+# ---- Main Program ----
+if __name__ == "__main__":
+    ll = LinkedList()
+
+    # Input number of elements
+    n = int(input("Enter number of elements: "))
+    values = list(map(int, input("Enter elements: ").split()))
+
+    for val in values:
+        ll.append(val)
+
+    # Find and print middle
+    middle = ll.find_middle()
+    print("Middle element:", middle)
+
 
 ## Sample Input & Output
+Enter number of elements: 5
+Enter elements: 10 20 30 40 50
+
+Middle element: 30
 
 ## Result
 
+The Python program successfully implemented a Singly Linked List and found the middle node using recursion.
+
+For odd number of nodes, it returns the exact middle.
+
+For even number of nodes, it returns the second middle element.
 
