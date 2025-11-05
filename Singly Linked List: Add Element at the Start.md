@@ -34,56 +34,35 @@ To write a Python program that adds a **new element** at the **start** of a sing
 ---
 
 ## Program
-```python
-# Node class
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-
-# Singly Linked List class
+```
+def init (self, data): 
+   self.data = data 
+   self.next = None
 class LinkedList:
-    def __init__(self):
-        self.head = None
-
-    # Add element at the start
-    def push_front(self, newElement):
-        new_node = Node(newElement)
-        new_node.next = self.head
-        self.head = new_node
-
-    # Print the linked list
-    def PrintList(self):
-        if self.head is None:
-            print("The list is empty.")
-        else:
-            temp = self.head
-            print("Singly Linked List elements:", end=" ")
-            while temp:
-                print(temp.data, end=" ")
-                temp = temp.next
-            print()
-
-
-# ---- Main Program ----
+   def init (self):
+      self.head = None
+   def push_front(self, newElement): 
+      new_node = Node(newElement) 
+      new_node.next = self.head 
+      self.head = new_node
+   def PrintList(self):
+      temp = self.head 
+      if(temp != None):
+         print("The list contains:", end=" ") 
+      while (temp != None): 
+         print(temp.data, end=" ")
+         temp = temp.next 
+      print()
+      else:
+         print("The list is empty.")
 MyList = LinkedList()
-
-# Adding elements at the start
-MyList.push_front(10)
-MyList.push_front(20)
-MyList.push_front(30)
-
-# Print the list
+MyList.push_front(10) 
+MyList.push_front(20) 
+MyList.push_front(30) 
 MyList.PrintList()
-
+```
 ## Sample Output
-Singly Linked List elements: 30 20 10
+![image](https://github.com/user-attachments/assets/99bb3fbc-1a1a-4fe5-aff7-144cd4ea8bc4)
 
 ## Result
-
-The Python program successfully implemented a Singly Linked List with functionality to:
-
-Add elements at the start of the list using the push_front() method.
-
-Display the list using the PrintList() method
+Thus the program has been successfully executed
