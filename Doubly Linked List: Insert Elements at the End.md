@@ -35,75 +35,55 @@ To write a Python program that:
 ---
 
 ## 💻 Program
-```python
-# Node class
-class Node:
-    def __init__(self, item):
-        self.item = item      # data stored in the node
-        self.nref = None      # reference to next node
-        self.pref = None      # reference to previous node
-
-
-# Doubly Linked List class
-class DoublyLinkedList:
-    def __init__(self):
-        self.start_node = None
-
-    # Insert in empty list
-    def insert_in_emptylist(self, data):
-        if self.start_node is None:
-            new_node = Node(data)
-            self.start_node = new_node
-        else:
-            print("The list is not empty!")
-
-    # Insert at end
-    def insert_at_end(self, data):
-        if self.start_node is None:
-            self.insert_in_emptylist(data)
-            return
-        n = self.start_node
-        while n.nref is not None:
-            n = n.nref
-        new_node = Node(data)
-        n.nref = new_node
-        new_node.pref = n
-
-    # Traverse the list
-    def traverse_list(self):
-        if self.start_node is None:
-            print("The list is empty!")
-            return
-        else:
-            n = self.start_node
-            print("Doubly Linked List elements:", end=" ")
-            while n is not None:
-                print(n.item, end=" ")
-                n = n.nref
-            print()
-
-
-# ---- Main Program ----
-dll = DoublyLinkedList()
-
-print("Inserting elements at the end of Doubly Linked List:")
-dll.insert_at_end(10)
-dll.insert_at_end(20)
-dll.insert_at_end(30)
-dll.insert_at_end(40)
-
-# Traverse and display
-dll.traverse_list()
-
-
+```
+      class Node:
+         def init (self, data): 
+            self.item = data 
+            self.nref = None 
+            self.pref = None
+      class DoublyLinkedList: 
+         def init (self):
+            self.start_node = None
+         def insert_in_emptylist(self, data): 
+            if self.start_node is None:
+               new_node = Node(data) 
+               self.start_node = new_node
+            else:
+               print("list is not empty") 
+         def insert_at_end(self, data):
+               new_node = Node(data) 
+           ifself.start_node is None:
+               self.start_node = new_node 
+           else:
+               print("list is not empty") 
+      def insert_at_end(self, data):
+            new_node = Node(data) 
+            ifself.start_node is None:
+               self.start_node = new_node 
+            else:
+               n = self.start_node
+            while n.nref is not None: 
+               n = n.nref
+            n.nref = new_node 
+            new_node.pref = n
+      def traverse_list(self):
+            if self.start_node is None: 
+               print("List has no element") 
+               return
+            else:
+               n = self.start_node 
+               while n is not None:
+                  print(n.item , " ") 
+                  n = n.nref
+      new_linked_list = DoublyLinkedList() 
+      new_linked_list.insert_at_end(10) 
+      new_linked_list.insert_at_end(20) 
+      new_linked_list.insert_at_end(30) 
+      new_linked_list.insert_at_end(40) 
+      new_linked_list.traverse_list()
+```
 ## Sample Output
-Inserting elements at the end of Doubly Linked List:
-Doubly Linked List elements: 10 20 30 40
+![image](https://github.com/user-attachments/assets/659c09bb-4957-4b14-9fbc-35917fcf1e72)
 
 ## Result
-
-The Python program successfully implemented a Doubly Linked List where:
-
-Elements were inserted at the end of the list.
-
-The list was traversed and displayed correctly
+Thus the program has been successfully executed
